@@ -3,8 +3,19 @@ const funcion = require('./funciones');
 
 let conmando = argv._[0];
 
-if (argv._[0]=='crear'){
-    funcion.crear(argv);
+switch(conmando){
 
+    case 'crear':
+            funcion.crear(argv);
+
+    break;
+
+    case 'mostrar':
+        funcion.mostrar();
+    break;
+
+    default:
+        console.log('no ingreso un funcion validad.. crear o mostrar');
 
 }
+

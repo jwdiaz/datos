@@ -23,7 +23,9 @@ const creacion = {
   programacion
 };
 
-const argv = require("yargs").command('crear', "Crear un estudiante", creacion)
+const argv = require("yargs")
+            .command('crear', "Crear un estudiante", creacion)
+            .command('mostrar','muestra los estudiantes y  sus notas ')
   .argv;
 
 module.exports = { argv };

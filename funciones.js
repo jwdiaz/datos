@@ -43,7 +43,26 @@ fs.writeFile('db.json',datos,(err)=>{
 }
 
 
+const mostrar=()=>{
+    listar();
+    console.log('Nota de los estudiantes.')
+    console.log('ESTUDIANTE:  Matematicas  Ingles  programacion    promedio');
+
+    listaEstudiantes.forEach(estudiante => {
+        
+        console.log(estudiante.nombre +' \t  \t'
+                    +estudiante.matematicas +'          '
+                    +estudiante.ingles+'           '
+                    +estudiante.programacion+'         '+);
+        
+       
+
+    });
+}
+
+
 
 module.exports = {
-    crear 
+    crear,
+    mostrar
 };
