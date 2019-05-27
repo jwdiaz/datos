@@ -10,10 +10,16 @@ const crear = (estudiante) => {
         programacion: estudiante.programacion
     };
 
-
+    let duplicado = listaEstudiantes.find(nom=> nom.nombre == estudiante.nombre);
+    if(!duplicado){
+     
     listaEstudiantes.push(studen);
     
     guardar();
+
+    }else{
+        console.log('ya exite el estudiante '+estudiante.nombre);
+    }
 }
 const listar =() =>{
     try{
