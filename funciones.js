@@ -2,7 +2,7 @@ const fs = require('fs');
 listaEstudiantes = [];
 
 const crear = (estudiante) => {
-    
+    listar();
     let studen = {
         nombre: estudiante.nombre,
         matematicas: estudiante.matematicas,
@@ -15,11 +15,22 @@ const crear = (estudiante) => {
     
     guardar();
 }
+const listar =() =>{
+    try{
+
+    
+    listaEstudiantes = require('./db.json');
+    //listaEstudiantes = JSON.parse(fs.readFileSync('db.json'));
+}catch(error){
+    listaEstudiantes = [];
+
+}
+}
 
 const guardar =()=>{
 let datos= JSON.stringify(listaEstudiantes);
 
-fs.writeFile('bd.json',datos,(err)=>{
+fs.writeFile('db.json',datos,(err)=>{
     if(err) throw (err);
     console.log('Datos guardados con exito');
 })
