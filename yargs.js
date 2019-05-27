@@ -22,10 +22,14 @@ const creacion = {
   ingles,
   programacion
 };
+const muestraest={
+    nombre
+}
 
 const argv = require("yargs")
             .command('crear', "Crear un estudiante", creacion)
             .command('mostrar','muestra los estudiantes y  sus notas ')
+            .command('mostrarest','muestra los datos de estudiante ',muestraest)
   .argv;
 
 module.exports = { argv };

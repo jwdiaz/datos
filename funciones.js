@@ -53,16 +53,44 @@ const mostrar=()=>{
         console.log(estudiante.nombre +' \t  \t'
                     +estudiante.matematicas +'          '
                     +estudiante.ingles+'           '
-                    +estudiante.programacion+'         '+);
+                    +estudiante.programacion+'         '
+                    +(estudiante.matematicas + estudiante.ingles+estudiante.programacion)/3                   
+                    );
         
        
 
     });
 }
 
+const mostrarEst = (nom) =>{
+    listar();
 
+    
+    let est = listaEstudiantes.find(buscar=> buscar.nombre == nom);
+    if(!est){
+     
+        console.log('no exite el estudiante '+nom);
+    
+    guardar();
+
+    }else{
+
+        console.log('ESTUDIANTE:  Matematicas  Ingles  programacion  ');
+
+      
+            
+            console.log(est.nombre +' \t  \t'
+                        +est.matematicas +'          '
+                        +est.ingles+'           '
+                        +est.programacion+'         ');
+            
+        
+    }
+
+}
 
 module.exports = {
     crear,
-    mostrar
+    mostrar,
+    mostrarEst
 };
