@@ -17,9 +17,15 @@ switch(conmando){
     case 'mostrarest':
         funcion.mostrarEst(argv.nombre);
     break;
+    case 'mostrarmat':
+        funcion.mostrarmat();
+    break;
+    case 'mostrarpro':
+            funcion.mostrarpro();
+        break;
 
     default:
-        console.log('no ingreso un funcion validad.. crear o mostrar');
+        console.log('No ingreso, una funcion valida.. \n crear,  mostrar,  mostrarest,  mostrarmat,  mostrarpro..');
 
 }
 

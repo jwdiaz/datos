@@ -56,10 +56,27 @@ const mostrar=()=>{
                     +estudiante.programacion+'         '
                     +(estudiante.matematicas + estudiante.ingles+estudiante.programacion)/3                   
                     );
-        
-       
-
     });
+}
+
+const mostrarpro=()=>{
+    listar();
+    console.log("Estudiantes con promedio mayor a 3.");
+    console.log("___________________________________");
+    console.log("ESTUDIANTE:     PROMEDIO");
+    console.log("-------------------------------------");
+
+    listaEstudiantes.forEach(estudiante => {
+      let promedio =
+        (estudiante.matematicas +
+          estudiante.ingles +
+          estudiante.programacion) /
+        3;
+      if (promedio >= 3) {
+        console.log(estudiante.nombre + " \t  \t" + promedio);
+      }
+    });
+    console.log("________________________________");
 }
 
 const mostrarEst = (nom) =>{
@@ -89,8 +106,32 @@ const mostrarEst = (nom) =>{
 
 }
 
+const mostrarmat =()=>{
+    listar();
+    let gana = listaEstudiantes.filter(mat=>mat.matematicas>=3);
+    if (gana.lenght == 0){
+        console.log('Ningun estudiante ganan Matematicas' );
+    }else{
+
+        console.log("Estudiantes con Ganan Matematicas.");
+        console.log("___________________________________");
+        console.log("ESTUDIANTE:     NOTA");
+        console.log("-------------------------------------");
+    
+        gana.forEach(estudiante => {
+        
+            console.log(estudiante.nombre + " \t  \t" +estudiante.matematicas);
+          
+        });
+        console.log("________________________________");
+
+    }
+}
+
 module.exports = {
     crear,
     mostrar,
-    mostrarEst
+    mostrarEst,
+    mostrarmat,
+    mostrarpro
 };
